@@ -14,12 +14,18 @@
 
 :root {
     /* Main color scheme */
-    --primary-color: #1a4d7c; /* Deep blue for professionalism */
-    --secondary-color: #e63946; /* Accent red for CTAs */
-    --light-color: #dce6eb; /* Darker off-white with blue undertone */
-    --dark-color: #1d3557; /* Darker blue for text */
-    --gray-color: #457b9d; /* Medium blue-gray for subtle elements */   
-    --light-gray: #f8f9fa; /* Light gray for subtle elements */
+    --primary-color: #1a4d7c;
+    /* Deep blue for professionalism */
+    --secondary-color: #e63946;
+    /* Accent red for CTAs */
+    --light-color: #dce6eb;
+    /* Darker off-white with blue undertone */
+    --dark-color: #1d3557;
+    /* Darker blue for text */
+    --gray-color: #457b9d;
+    /* Medium blue-gray for subtle elements */
+    --light-gray: #f8f9fa;
+    /* Light gray for subtle elements */
     --border-color: #ddd;
 
     /* Fonts */
@@ -140,14 +146,16 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 0.5rem 0; /* Reduced padding */
+    padding: 0.5rem 0;
+    /* Reduced padding */
     width: 100%;
 }
 
-header > .container {
+header>.container {
     width: 100%;
     max-width: 100%;
-    padding: 0 3rem; /* Increased side padding */
+    padding: 0 3rem;
+    /* Increased side padding */
     display: flex;
     align-items: center;
 }
@@ -178,10 +186,12 @@ header > .container {
 
 .logo-image {
     height: auto;
-    max-height: 45px; /* Reduced size */
+    max-height: 45px;
+    /* Reduced size */
     width: auto;
     display: block;
-    margin-bottom: 2px; /* Reduced margin */
+    margin-bottom: 2px;
+    /* Reduced margin */
 }
 
 .tagline {
@@ -201,7 +211,8 @@ header > .container {
 .main-nav {
     display: flex;
     justify-content: center;
-    gap: 2.5rem; /* Increased spacing between nav items */
+    gap: 2.5rem;
+    /* Increased spacing between nav items */
 }
 
 .main-nav li a {
@@ -280,16 +291,18 @@ header > .container {
     text-align: center;
     border-radius: 4px;
     transition: all 0.3s ease;
-    margin-left: 1rem; /* Add space between logo and toggle */
+    margin-left: 1rem;
+    /* Add space between logo and toggle */
 }
 
 /* iPad-specific menu styles (768px-1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
+
     /* Show mobile menu toggle on iPad */
     .mobile-menu-toggle {
         display: block;
     }
-    
+
     /* Hide desktop navigation on iPad */
     #main-nav-container {
         height: 0;
@@ -302,22 +315,22 @@ header > .container {
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         z-index: 1000;
     }
-    
+
     #main-nav-container.show {
         height: auto;
         padding: 0.5rem 0;
     }
-    
+
     /* Adjust navigation items on iPad */
     .main-nav {
         flex-direction: column;
         gap: 0;
     }
-    
+
     .main-nav li {
         width: 100%;
     }
-    
+
     .main-nav li a {
         display: block;
         padding: 0.75rem 1.5rem;
@@ -325,7 +338,7 @@ header > .container {
         margin: 0;
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }
-    
+
     .main-nav li a.active::after {
         display: none;
     }
@@ -355,9 +368,11 @@ nav a.highlight:hover {
     background-position: center;
     color: white;
     text-align: center;
-    padding: 12rem 1rem; /* Increased padding for more height */
+    padding: 12rem 1rem;
+    /* Increased padding for more height */
     position: relative;
-    min-height: 800px; /* Set minimum height to ensure it's larger */
+    min-height: 800px;
+    /* Set minimum height to ensure it's larger */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -406,6 +421,8 @@ nav a.highlight:hover {
 .services {
     padding: var(--section-spacing) 0;
     background-color: var(--light-color);
+    contain: layout style;
+    will-change: scroll-position;
 }
 
 .services-grid {
@@ -413,18 +430,24 @@ nav a.highlight:hover {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
     margin-bottom: 3rem;
+    contain: layout;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .service-card {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.96);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(220, 230, 235, 0.4);
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) translateZ(0);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
@@ -479,14 +502,19 @@ nav a.highlight:hover {
     border-radius: 6px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    overflow: hidden; /* Ensure images don't overflow on zoom */
-    cursor: pointer; /* Add pointer cursor to indicate interactivity */
+    overflow: hidden;
+    /* Ensure images don't overflow on zoom */
+    cursor: pointer;
+    /* Add pointer cursor to indicate interactivity */
 }
 
 .material-item:hover {
-    transform: translateY(-8px); /* Increased lift for visibility */
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow */
-    background-color: #f9f9f9; /* Subtle background change */
+    transform: translateY(-8px);
+    /* Increased lift for visibility */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    /* Stronger shadow */
+    background-color: #f9f9f9;
+    /* Subtle background change */
 }
 
 .material-item img {
@@ -500,7 +528,8 @@ nav a.highlight:hover {
 }
 
 .material-item:hover img {
-    transform: scale(1.1); /* Increased zoom for visibility */
+    transform: scale(1.1);
+    /* Increased zoom for visibility */
 }
 
 .material-item p {
@@ -933,10 +962,11 @@ footer ul li {
     }
 
     /* Modern header mobile styles */
-    header > .container {
-        padding: 0 1rem; /* Reduce padding on mobile */
+    header>.container {
+        padding: 0 1rem;
+        /* Reduce padding on mobile */
     }
-    
+
     .modern-header {
         flex-wrap: wrap;
         justify-content: space-between;
@@ -946,14 +976,16 @@ footer ul li {
         flex: 1;
         margin-right: 1rem;
     }
-    
+
     .logo-image {
-        max-height: 45px; /* Slightly smaller on mobile */
+        max-height: 45px;
+        /* Slightly smaller on mobile */
         margin: 0 auto;
     }
 
     .contact-info {
-        display: none; /* Hide on mobile */
+        display: none;
+        /* Hide on mobile */
     }
 
     /* Mobile Navigation Styling */
@@ -961,7 +993,7 @@ footer ul li {
         display: block;
         order: 3;
     }
-    
+
     #main-nav-container {
         height: 0;
         overflow: hidden;

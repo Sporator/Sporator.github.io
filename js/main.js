@@ -89,32 +89,50 @@ document.addEventListener('DOMContentLoaded', function () {
     // Highlight active navigation item based on scroll position
     function highlightActiveNavItem() {
         const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.main-nav a[href^="#"]');
+        const serviceAreasSection = document.querySelector('.service-areas');
+        const allNavLinks = document.querySelectorAll('.main-nav a'); // Get ALL nav links
+        const sectionNavLinks = document.querySelectorAll('.main-nav a[href^="#"]');
+        const homeLink = document.querySelector('.main-nav a[href="index.html"]');
         const scrollPosition = window.scrollY + 100; // Offset for header
 
+        let activeSection = null;
+        
+        // Find which section is currently active
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
             const sectionId = section.getAttribute('id');
 
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${sectionId}`) {
-                        link.classList.add('active');
-                    }
-                });
+            // Special handling for about section - extend it to include service-areas
+            if (sectionId === 'about' && serviceAreasSection) {
+                const serviceAreasTop = serviceAreasSection.offsetTop;
+                const serviceAreasHeight = serviceAreasSection.offsetHeight;
+                const extendedHeight = sectionHeight + (serviceAreasTop - (sectionTop + sectionHeight)) + serviceAreasHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + extendedHeight) {
+                    activeSection = sectionId;
+                }
+            } else if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                activeSection = sectionId;
             }
         });
 
-        // Handle home link separately
-        if (scrollPosition < sections[0].offsetTop) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === 'index.html' || link.getAttribute('href') === '#') {
-                    link.classList.add('active');
-                }
-            });
+        // Remove active class from ALL nav links first
+        allNavLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+
+        if (activeSection) {
+            // Activate the section link
+            const activeLink = document.querySelector(`.main-nav a[href="#${activeSection}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+        } else if (scrollPosition < sections[0].offsetTop) {
+            // Only activate home if we're above the first section
+            if (homeLink) {
+                homeLink.classList.add('active');
+            }
         }
     }
 
