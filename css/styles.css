@@ -169,8 +169,10 @@ header>.container {
 
 /* Logo styles */
 .logo {
-    flex: 0 0 300px;
-    padding-right: 1rem;
+    flex: 0 0 250px;
+    /* Reduced from 300px */
+    padding-right: 0.5rem;
+    /* Reduced padding */
 }
 
 .logo-link {
@@ -211,8 +213,9 @@ header>.container {
 .main-nav {
     display: flex;
     justify-content: center;
-    gap: 2.5rem;
-    /* Increased spacing between nav items */
+    gap: 1.8rem;
+    /* Reduced from 2.5rem for more flexibility */
+    /* Allows more room on smaller desktop screens */
 }
 
 .main-nav li a {
@@ -250,9 +253,11 @@ header>.container {
 
 /* Contact info */
 .contact-info {
-    flex: 0 0 300px;
+    flex: 0 0 250px;
+    /* Reduced from 300px */
     text-align: right;
-    padding-left: 1rem;
+    padding-left: 0.5rem;
+    /* Reduced padding */
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -341,6 +346,12 @@ header>.container {
 
     .main-nav li a.active::after {
         display: none;
+    }
+
+    /* Move phone number closer to menu button only */
+    .contact-info {
+        margin-right: -6.5rem; /* Pull closer to menu button */
+        padding-left: 0; /* Remove left padding */
     }
 }
 
@@ -969,18 +980,22 @@ footer ul li {
 
     .modern-header {
         flex-wrap: wrap;
-        justify-content: space-between;
+        position: relative;
+        justify-content: center;
+        /* Center the logo */
     }
 
     .logo {
-        flex: 1;
-        margin-right: 1rem;
+        order: 2;
+        /* Put logo in center */
+        flex: none;
+        margin: 0;
     }
 
     .logo-image {
         max-height: 45px;
         /* Slightly smaller on mobile */
-        margin: 0 auto;
+        margin: 0;
     }
 
     .contact-info {
@@ -991,6 +1006,10 @@ footer ul li {
     /* Mobile Navigation Styling */
     .mobile-menu-toggle {
         display: block;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
         order: 3;
     }
 
@@ -1058,15 +1077,30 @@ footer ul li {
         color: var(--secondary-color);
     }
 
-    /* Add phone number to mobile menu */
+    /* Add phone number and call-to-action to mobile menu */
     .main-nav::after {
         content: "(970) 759-6008";
         display: block;
-        padding: 1rem 1.5rem;
+        padding: 0.75rem 1.5rem 1rem;
         font-weight: bold;
         color: var(--primary-color);
         text-align: center;
         background-color: rgba(0, 0, 0, 0.02);
+        position: relative;
+    }
+
+    .main-nav::before {
+        content: "FREE Estimates";
+        display: block;
+        position: absolute;
+        bottom: 0.3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.8rem;
+        color: var(--secondary-color);
+        font-weight: 600;
+        text-align: center;
+        width: 100%;
     }
 
     .services-grid,
@@ -1137,6 +1171,39 @@ footer ul li {
     }
 }
 
+/* Medium Screen Navigation Adjustments */
+@media (min-width: 993px) and (max-width: 1200px) {
+    .main-nav {
+        gap: 1.2rem;
+        /* Further reduce gap on medium screens */
+    }
+
+    .logo {
+        flex: 0 0 220px;
+        /* Smaller logo area */
+    }
+
+    .contact-info {
+        flex: 0 0 220px;
+        /* Smaller contact area */
+    }
+
+    .main-nav li a {
+        padding: 0.3rem 0.5rem;
+        /* Slightly less padding */
+        font-size: 0.85rem;
+        /* Slightly smaller font */
+    }
+
+    /* Materials Grid 2 rows x 3 columns for Medium Screens */
+    .materials-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        grid-template-rows: repeat(2, 1fr);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
 /* Additional Responsive Navigation */
 @media (min-width: 768px) and (max-width: 992px) {
     nav ul {
@@ -1166,9 +1233,11 @@ footer ul li {
     }
 
     .services-list li {
-        flex: 0 1 calc(50% - 0.5rem); /* 2 items per row on tablet */
+        flex: 0 1 calc(50% - 0.5rem);
+        /* 2 items per row on tablet */
         min-width: 200px;
-        white-space: normal; /* Allow text wrapping */
+        white-space: normal;
+        /* Allow text wrapping */
         padding: 0.8rem 1.2rem;
     }
 
