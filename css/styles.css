@@ -196,13 +196,6 @@ header>.container {
     /* Reduced margin */
 }
 
-.tagline {
-    font-size: 0.8rem;
-    color: var(--gray-color);
-    font-style: italic;
-    margin: 0;
-}
-
 /* Navigation */
 #main-nav-container {
     flex: 1 1 auto;
@@ -364,17 +357,9 @@ nav a.active {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-nav a.highlight {
-    background-color: var(--secondary-color);
-}
-
-nav a.highlight:hover {
-    background-color: #d12736;
-}
-
 /* Hero Section */
 .hero {
-    background-image: url('../images/rooftop-hero.jpg');
+    background-image: url('../images/rooftop-hero.webp');
     background-size: cover;
     background-position: center;
     color: white;

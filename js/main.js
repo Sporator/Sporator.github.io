@@ -6,9 +6,7 @@
 // Configuration for Google Reviews Widget
 const GOOGLE_PLACES_CONFIG = {
     placeId: 'ChIJjXXGUDsjPIcR_YLI2Pw8o9E', // Your Place ID
-    apiKey: 'AIzaSyCfhFOf0KIl4VmzURdoJS0lcQbEGGYTFOY',  // Your API Key
     reviewsToShow: 5, // Maximum number of reviews to display
-    allowFiltering: true, // Allow filtering by rating
     sortBy: 'recent' // Options: 'recent', 'relevant', 'rating'
 };
 
@@ -91,7 +89,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const sections = document.querySelectorAll('section[id]');
         const serviceAreasSection = document.querySelector('.service-areas');
         const allNavLinks = document.querySelectorAll('.main-nav a'); // Get ALL nav links
-        const sectionNavLinks = document.querySelectorAll('.main-nav a[href^="#"]');
         const homeLink = document.querySelector('.main-nav a[href="index.html"]');
         const scrollPosition = window.scrollY + 100; // Offset for header
 
