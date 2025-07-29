@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const scrollPosition = window.scrollY + 100; // Offset for header
 
         let activeSection = null;
-        
+
         // Find which section is currently active
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const serviceAreasTop = serviceAreasSection.offsetTop;
                 const serviceAreasHeight = serviceAreasSection.offsetHeight;
                 const extendedHeight = sectionHeight + (serviceAreasTop - (sectionTop + sectionHeight)) + serviceAreasHeight;
-                
+
                 if (scrollPosition >= sectionTop && scrollPosition < sectionTop + extendedHeight) {
                     activeSection = sectionId;
                 }
@@ -185,7 +185,7 @@ function displayPlaceReviews(place, container) {
 
     if (place.reviews && place.reviews.length > 0) {
         html += '<div class="reviews-list">';
-        
+
         // Sort reviews by time (most recent first) if configured
         let sortedReviews = [...place.reviews];
         if (GOOGLE_PLACES_CONFIG.sortBy === 'recent') {
@@ -198,7 +198,7 @@ function displayPlaceReviews(place, container) {
         for (let i = 0; i < reviewsToShow; i++) {
             const review = sortedReviews[i];
             const reviewDate = new Date(review.time * 1000).toLocaleDateString();
-            
+
             html += `
                 <div class="review-item">
                     <div class="review-header">
@@ -219,7 +219,7 @@ function displayPlaceReviews(place, container) {
                 </div>
             `;
         }
-        
+
         html += '</div>';
     }
 
@@ -231,7 +231,7 @@ function displayPlaceReviews(place, container) {
             </a>
         </div>
     `;
-    
+
     html += '</div>';
     container.innerHTML = html;
 }
