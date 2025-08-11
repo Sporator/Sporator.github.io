@@ -17,8 +17,6 @@
     <link rel="dns-prefetch" href="https://maps.googleapis.com">
     <link rel="preload" href="images/rooftop-hero.jpg" as="image">
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Google Reviews styling -->
-    <link rel="stylesheet" href="css/google-reviews.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Font -->
@@ -198,7 +196,7 @@
                     </ul>
                 </div>
                 <div class="about-image">
-                    <img src="images/about-team.webp" alt="Universal Roofing Team">
+                    <img src="images/about-us.jpg" alt="Universal Roofing Team">
                 </div>
             </div>
         </div>
@@ -270,24 +268,31 @@
                         <p>Our team is here to help!</p>
                     </div>
                     <div class="contact-method">
-                        <i class="fas fa-star"></i>
-                        <h3>Why Choose Universal Roofing?</h3>
-                        <p>✓ Licensed & Insured</p>
-                        <p>✓ Manufacturer Warranties</p>
-                        <p>✓ FREE Estimates & Consultations</p>
-                        <p>✓ Family Owned & Operated Since 2005</p>
-                    </div>
-                    <div class="contact-method">
                         <i class="fas fa-map-marker-alt"></i>
                         <h3>Service Area</h3>
                         <p>La Plata County and Surrounding Areas</p>
-                        <p>Durango • Bayfield • Ignacio • Pagosa Springs • Silverton • Cortez</p>
+                        <p>Durango • Bayfield • Ignacio • Pagosa Springs • Silverton • Cortez • and More</p>
                     </div>
                 </div>
 
                 <div class="testimonials">
-                    <h3>What Our Customers Say</h3>
-                    <div id="google-reviews"></div>
+                    <div class="reviews-section">
+                        <div class="reviews-header">
+                            <h3 class="section-title">Why Choose Universal Roofing?</h3>
+                            <div class="why-choose-list">
+                                <p><i class="fas fa-check-circle"></i> FREE Estimates & Consultations</p>
+                                <p><i class="fas fa-check-circle"></i> Family Owned & Operated Since 2005</p>
+                                <p><i class="fas fa-check-circle"></i> Licensed & Insured</p>
+                                <p><i class="fas fa-check-circle"></i> Manufacturer Warranties</p>
+                            </div>
+                        </div>
+                        <div class="reviews-cta">
+                            <p class="reviews-intro">See our track record of satisfied customers and quality service</p>
+                            <a href="https://www.google.com/search?q=universal+roofing+llc+bayfield+co&rlz=1C5GCCM_en&oq=universal+roofing&gs_lcrp=EgZjaHJvbWUqCAgCEEUYJxg7MgYIABBFGDsyCQgBEEUYOxiABDIICAIQRRgnGDsyCQgDEEUYORiABDIGCAQQRRg7MgYIBRBFGDwyBggGEEUYPTIGCAcQRRg80gEINDMzM2owajeoAgCwAgA&sourceid=chrome&ie=UTF-8&safe=active&ssui=on#lrd=0x873c233b50c6758d:0xd1a33cfcd8c882fd,1" target="_blank" rel="noopener noreferrer" class="cta-button google-reviews-btn">
+                                <i class="fab fa-google"></i> View Our Google Reviews
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -356,10 +361,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <!-- Google Maps API (for Places reviews) - loaded synchronously for reliability -->
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfhFOf0KIl4VmzURdoJS0lcQbEGGYTFOY&libraries=places"></script>
     <script src="js/main.js"></script>
 </body>
 

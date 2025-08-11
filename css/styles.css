@@ -746,7 +746,7 @@ nav a.active {
 }
 
 .contact-info-box {
-    background-color: white;
+    background-color: var(--light-color);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -1232,5 +1232,244 @@ footer ul li {
         grid-template-rows: repeat(2, 1fr);
         max-width: 800px;
         margin: 0 auto;
+    }
+}
+
+/* ===== REVIEWS SECTION ===== */
+.reviews-section {
+    text-align: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.reviews-header {
+    margin-bottom: 1.5rem;
+}
+
+.testimonials {
+    height: 100%;
+}
+
+.reviews-header .section-title {
+    color: #2d3748;
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.reviews-intro {
+    color: #4a5568;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.why-choose-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+    flex-grow: 1;
+}
+
+.why-choose-list p {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2d3748;
+    padding: 1rem 1.25rem;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.why-choose-list p:hover {
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.15);
+}
+
+.why-choose-list i {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.google-reviews-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.1rem;
+    padding: 1rem 2.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.google-reviews-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(230, 57, 70, 0.3);
+}
+
+.google-reviews-btn i {
+    font-size: 1.2rem;
+    color: inherit;
+}
+
+.google-reviews-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.google-reviews-btn:hover::before {
+    left: 100%;
+}
+
+/* Enhanced Contact Section */
+.contact {
+    background: #f8f9fa;
+    padding: 5rem 0;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+    align-items: stretch;
+    min-height: 500px;
+}
+
+.contact-info-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+}
+
+.contact-method {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-method:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    border-color: rgba(230, 57, 70, 0.3);
+}
+
+.contact-method i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.contact-method h3 {
+    color: #2d3748;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.contact-method p {
+    color: #718096;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Service areas - subtle enhancement */
+.contact-method p:last-of-type {
+    color: #4a5568;
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+.phone-link {
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    background: rgba(230, 57, 70, 0.1);
+    width: fit-content;
+}
+
+.phone-link:hover {
+    background: var(--secondary-color);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        min-height: auto;
+    }
+    
+    .contact-info-box {
+        gap: 1.5rem;
+    }
+    
+    .contact-method {
+        padding: 1.5rem;
+    }
+    
+    .reviews-section {
+        padding: 1.5rem;
+    }
+    
+    .reviews-header .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .why-choose-list p {
+        font-size: 0.9rem;
+        padding: 0.75rem 1rem;
+        justify-content: center;
+    }
+    
+    .google-reviews-btn {
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
     }
 }
