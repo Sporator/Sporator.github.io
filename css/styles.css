@@ -1540,3 +1540,62 @@ footer ul li {
     margin-right: 0.6rem;
     color: var(--secondary-color);
 }
+
+
+/* ---- homepage service link wiring ---- */
+.service-card { position: relative; }
+.service-card h3 .card-link { color: inherit; text-decoration: none; }
+.service-card h3 .card-link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.service-card:hover h3 .card-link { color: var(--secondary-color); }
+.handyman-list li { padding: 0; }
+.handyman-list a { color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: center; width: 100%; padding: 0.8rem 1rem; }
+.services-viewall { text-align: center; margin: 0 0 2.5rem; }
+
+/* ---- service pages (image-free, brand colored) ---- */
+.svc-hero { background: linear-gradient(135deg, var(--primary-color), var(--dark-color)); color: #fff; padding: 3.5rem 0 3rem; }
+.svc-hero .container { max-width: 1100px; }
+.breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.8); margin-bottom: 1.25rem; }
+.breadcrumb a { color: rgba(255,255,255,0.9); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb span { margin: 0 0.35rem; }
+.breadcrumb .crumb-current { color: #fff; margin: 0; }
+.svc-eyebrow { display: inline-block; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.8rem; color: #fff; background: var(--secondary-color); padding: 0.3rem 0.7rem; border-radius: 4px; margin-bottom: 1rem; }
+.svc-eyebrow i { margin-right: 0.4rem; }
+.svc-hero h1 { color: #fff; font-size: 2.6rem; line-height: 1.1; margin: 0 0 0.75rem; }
+.svc-tagline { font-size: 1.25rem; color: rgba(255,255,255,0.9); max-width: 680px; margin: 0 0 1.75rem; }
+.svc-body { padding: 4rem 0; }
+.svc-grid { display: grid; grid-template-columns: 1fr 320px; gap: 3rem; align-items: start; max-width: 1100px; }
+.svc-main h2 { color: var(--dark-color); margin: 2rem 0 1rem; font-size: 1.6rem; }
+.svc-main h2:first-of-type { margin-top: 0; }
+.svc-main p { margin: 0 0 1rem; line-height: 1.7; }
+.svc-list { list-style: none; padding: 0; margin: 0 0 1rem; }
+.svc-list li { padding: 0.5rem 0; border-bottom: 1px solid var(--border-color); }
+.svc-list i { color: var(--secondary-color); margin-right: 0.6rem; }
+.svc-faq-item { margin-bottom: 1.25rem; }
+.svc-faq-item h3 { color: var(--primary-color); font-size: 1.15rem; margin: 0 0 0.35rem; }
+.svc-faq-item p { margin: 0; line-height: 1.7; }
+.svc-aside { position: sticky; top: 100px; }
+.svc-cta-card { background: var(--dark-color); color: #fff; padding: 1.75rem; border-radius: 8px; border-top: 4px solid var(--secondary-color); margin-bottom: 1.5rem; }
+.svc-cta-card h3 { color: #fff; margin: 0 0 0.5rem; }
+.svc-cta-card p { color: rgba(255,255,255,0.85); font-size: 0.95rem; margin: 0 0 1.25rem; line-height: 1.6; }
+.svc-related { background: var(--light-gray); padding: 1.5rem; border-radius: 8px; }
+.svc-related h4 { margin: 0 0 0.75rem; color: var(--dark-color); }
+.svc-related ul { list-style: none; padding: 0; margin: 0; }
+.svc-related a { color: var(--primary-color); text-decoration: none; display: block; padding: 0.35rem 0; }
+.svc-related a:hover { color: var(--secondary-color); }
+.svc-related i { margin-right: 0.4rem; }
+.svc-related-all { margin: 0.75rem 0 0; }
+.svc-index-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
+.svc-index-card { display: block; background: #fff; border: 1px solid var(--border-color); border-radius: 8px; padding: 1.75rem; text-decoration: none; color: var(--dark-color); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.svc-index-card:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+.svc-index-card > i { font-size: 1.8rem; color: var(--secondary-color); margin-bottom: 0.75rem; display: block; }
+.svc-index-card h3 { margin: 0 0 0.5rem; color: var(--primary-color); }
+.svc-index-card p { margin: 0 0 1rem; font-size: 0.95rem; line-height: 1.6; color: #444; }
+.svc-index-more { font-weight: 600; color: var(--secondary-color); font-size: 0.9rem; }
+.svc-index-more i { margin-left: 0.3rem; }
+.svc-index-sub { font-size: 1rem; font-weight: 400; color: var(--gray-color); display: block; }
+@media (max-width: 900px) {
+    .svc-grid { grid-template-columns: 1fr; }
+    .svc-aside { position: static; }
+    .svc-hero h1 { font-size: 2rem; }
+}
