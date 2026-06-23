@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://universalroofinghm.com/sitemap.xml
